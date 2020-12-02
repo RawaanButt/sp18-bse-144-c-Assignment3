@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    h1 Add New Tour
+    form(action="/products/add", method="post" )
+        .form-group 
+            label(for="tourDestination") Tour Destination
+            input#tourDestination(type="text", class="form-control", name='tourDestination')
+        .form-group 
+            label(for="id") Tour ID
+            input#id(type="text", class="form-control", name='id')
+        .form-group 
+            label(for="noOfSeats") Number of Seats
+            input#noOfSeats(type="text", class="form-control", name='noOfSeats')
+        
+        .form-group 
+            label(for="tourStart") Tour Start
+            input#tourStart(type="date", class="form-control", name='tourStart')
+        .form-group 
+            label(for="noOfDays") Number of Days
+            input#noOfDays(type="text", class="form-control", name='noOfDays')
+        .form-group 
+            label(for="charges") Charges($)
+            input#charges(type="text", class="form-control", name='charges')
+        input(type="submit", class="btn btn-info")

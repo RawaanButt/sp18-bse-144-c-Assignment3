@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 My Cart
+  -var totalCharges=0;
+ 
+  
+    table.table
+      thead
+         th Tour Destination
+         th TourID
+         th Tour Start
+         th Duration(Days)
+         th Charges($)
+         th Actions
+      tbody
+        each item in cart
+          -totalCharges+=parseInt(item.charges)
+          
+          tr
+             td=item.tourDestination
+             td=item.id
+             td=item.tourStart
+             td=item.noOfDays
+             td=item.charges
+             td
+              a(href="/products/cart/remove/"+item._id, class='btn btn-danger') Remove
+      tfoot
+        tr
+          td Total
+          td 
+          td 
+          td 
+          td=totalCharges
+          td
+            a(href="/products/checkout", class='btn btn-success') Checkout
+            

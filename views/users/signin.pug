@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 Sign In
+  form(action="/users/signin", method="post" )
+        .form-group 
+            label(for="Username") Username
+            input#Username(type="text", class="form-control", name='Username')
+        .form-group 
+            label(for="password") Password
+            input#password(type="password", class="form-control", name='password')
+        
+        input(type="submit", class="btn btn-info" value="SignIn")
+        
